@@ -14,12 +14,16 @@ class MessageSent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $message;
+    public $user;
+
     /**
      * Create a new event instance.
      */
-    public function __construct()
+    public function __construct($message, $user)
     {
-        //
+        $this->message = $message;
+        $this->user = $user;
     }
 
     /**
@@ -29,8 +33,10 @@ class MessageSent
      */
     public function broadcastOn(): array
     {
-        return [
-            new PrivateChannel('channel-name'),
-        ];
+        return ['chat-channel'];
+    }
+
+    public function broadcastAs(){
+        return 'message.sent';
     }
 }
