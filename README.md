@@ -1,4 +1,4 @@
 # Chat-api
 
 ## Sobre
-<p>Api para troca de mensagem entre usuários em tempo real</p>
+<p>Api em Laravel para realizar trocas de mensagens entre usuários em tempo real</p>
